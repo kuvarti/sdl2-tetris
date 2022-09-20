@@ -25,7 +25,6 @@ gamewindow::gamewindow()
 				std::cerr << "Error leading image : "<< SDL_GetError() << std::endl;
 				exit(0);
 			}
-			SDL_Delay(3000);
 		}
 	}
 }
