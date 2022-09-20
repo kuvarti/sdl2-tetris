@@ -1,3 +1,6 @@
+# vscode
+.vscode
+
 # Prerequisites
 *.d
 
@@ -27,6 +30,7 @@
 *.lib
 
 # Executables
+game
 *.exe
 *.out
 *.app

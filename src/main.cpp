@@ -1,6 +1,7 @@
 #include <iostream>
+#include "Gamewindow.hpp"
 
 int	main(void)
 {
-	std::cout << "Proje başlangici yeeeee";
+	gamewindow window;
 }
