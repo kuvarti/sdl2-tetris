@@ -46,12 +46,7 @@ void piece::printmap(void)
 	for (int i = 0; i < max; i++)
 	{
 		for (int j = 0; j < max; j++)
-		{
-			if (_pieceMaping[i][j] == 0)
-				std::cout << '0';
-			else
-				std::cout << '1';
-		}
+			std::cout << _pieceMaping[i][j];
 		std::cout << std::endl;
 	}
 }
@@ -64,12 +59,13 @@ char **emptyPieceMap(pieceSize type)
 		max = 3;
 	else
 		max = 4;
-	ret = new char *[max];
+	ret = new char *[max + 1];
 	for (int i = 0; i < max; i++)
 	{
 		ret[i] = new char[max];
 		for (int j = 0; j < max; j++)
-			ret[i][j] = 0;
+			ret[i][j] = '0';
 	}
+	ret[max] = nullptr;
 	return ret;
 }

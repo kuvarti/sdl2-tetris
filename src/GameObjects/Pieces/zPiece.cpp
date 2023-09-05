@@ -3,9 +3,9 @@
 zPiece::zPiece() : piece(pieceSize::threeXthree)
 {
 	char **zPieceMap = emptyPieceMap(pieceSize::threeXthree);
-	zPieceMap[1][0] = 1;
-	zPieceMap[1][1] = 1;
-	zPieceMap[2][1] = 1;
-	zPieceMap[2][2] = 1;
+	zPieceMap[0][0] = '1';
+	zPieceMap[0][1] = '1';
+	zPieceMap[1][1] = '1';
+	zPieceMap[1][2] = '1';
 	setPieceMaping(zPieceMap);
 }
