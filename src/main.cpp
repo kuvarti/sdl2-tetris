@@ -29,5 +29,10 @@ int main(void)
 	tmp = new zPiece();
 
 	tmp->printmap();
+	tmp->rotateLeft();
+	tmp->printmap();
+	tmp->rotateRight();
+	tmp->rotateRight();
+	tmp->printmap();
 	delete tmp;
 }

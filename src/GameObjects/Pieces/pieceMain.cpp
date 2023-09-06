@@ -7,6 +7,40 @@ piece::piece(pieceSize pSize)
 	_pieceMaping = emptyPieceMap(pSize);
 }
 
+void piece::rotateLeft(void)
+{
+	int max = _ownPieceSize == pieceSize::threeXthree ? 3 : 4;
+	for (int i = 0; i < max / 2; i++)
+	{
+		for (int j = i; j < max - i - 1; j++)
+		{
+			int temp = _pieceMaping[i][j];
+			_pieceMaping[i][j] = _pieceMaping[j][max - 1 - i];
+			_pieceMaping[j][max - 1 - i] = _pieceMaping[max - 1 - i][max - 1 - j];
+			_pieceMaping[max - 1 - i][max - 1 - j] = _pieceMaping[max - 1 - j][i];
+			_pieceMaping[max - 1 - j][i] = temp;
+		}
+	}
+	std::cout << "zPiece: Rotate left" << std::endl;
+}
+
+void piece::rotateRight(void)
+{
+	int max = _ownPieceSize == pieceSize::threeXthree ? 3 : 4;
+	for (int i = 0; i < max / 2; i++)
+	{
+		for (int j = i; j < max - i - 1; j++)
+		{
+			int temp = _pieceMaping[i][j];
+			_pieceMaping[i][j] = _pieceMaping[max - 1 - j][i];
+			_pieceMaping[max - 1 - j][i] = _pieceMaping[max - 1 - i][max - 1 - j];
+			_pieceMaping[max - 1 - i][max - 1 - j] = _pieceMaping[j][max - 1 - i];
+			_pieceMaping[j][max - 1 - i] = temp;
+		}
+	}
+	std::cout << "zPiece: Rotate right" << std::endl;
+}
+
 int piece::setPieceMaping(char **newmap)
 {
 	if (_ownPieceSize == pieceSize::threeXthree && newmap[2] && !newmap[3])
