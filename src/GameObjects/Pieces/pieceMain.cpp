@@ -96,9 +96,10 @@ char **emptyPieceMap(pieceSize type)
 	ret = new char *[max + 1];
 	for (int i = 0; i < max; i++)
 	{
-		ret[i] = new char[max];
+		ret[i] = new char[max + 1];
 		for (int j = 0; j < max; j++)
 			ret[i][j] = '0';
+		ret[i][max] = 0;
 	}
 	ret[max] = nullptr;
 	return ret;

@@ -1,6 +1,6 @@
 NAME		= game
 
-CC			= g++ -g
+CC			= g++
 INCLUDES	= -Iincludes/. -Iincludes/pieces/.
 CFLAGS		= -g $(INCLUDES)
 LFLAGS		= -lSDL2 -lSDL2_image
@@ -27,11 +27,11 @@ objdir:
 	@mkdir -p $(OBJD);
 
 clean:
-	@rm -rf $(OBJD)
+	@if [ -d $(OUTPREFIX) ]; then rm -rf $(OBJD); fi
 	@echo $(RED) "Object Folder Deleted" $(RESET)
 
 fclean: clean
-	@rm $(NAME)
+	@if [ ! -d $(NAME) ]; then rm -rf $(NAME); fi
 	@echo $(RED) $(NAME) is Removed $(RESET)
 
 run: $(NAME)

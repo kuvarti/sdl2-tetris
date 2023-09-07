@@ -1,7 +1,6 @@
 #include <iostream>
 #include "game.hpp"
-
-#include "zPiece.hpp"
+#include "pieceLib.hpp"
 
 // int main(void)
 // {
@@ -23,16 +22,19 @@
 // 	}
 // }
 
+void deneme(piece *tmp)
+{
+	tmp->printmap();
+	for (int i = 0; i < 3; i++)
+	{
+		tmp->rotateRight();
+		tmp->printmap();
+	}
+	delete tmp;
+}
+
 int main(void)
 {
-	piece *tmp;
-	tmp = new zPiece();
-
-	tmp->printmap();
-	tmp->rotateLeft();
-	tmp->printmap();
-	tmp->rotateRight();
-	tmp->rotateRight();
-	tmp->printmap();
-	delete tmp;
+	std::cout << "\nhere is rlPiece: " << std::endl;
+	deneme(new rlPiece());
 }
