@@ -1,16 +1,17 @@
-#ifndef GAME_HPP
-#define GAME_HPP
+#pragma once
 
-#include <SDL2/SDL.h>
-#include "SDL2/SDL_events.h"
+#include <queue>
+#include "pieceLib.hpp"
+#include "Vector2.hpp"
 
 class gameClass
 {
 public:
-	bool isRun;
-	SDL_Event event;
+	gameClass(Vector2);
+	~gameClass();
 
 private:
+	char **map;
+	piece *_activePiece;
+	std::queue<piece *> _nextPiece;
 };
-
-#endif
