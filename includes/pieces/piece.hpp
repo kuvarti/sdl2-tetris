@@ -1,5 +1,6 @@
 #pragma once
 #include <exception>
+#include "Vector2.hpp"
 
 struct inCorrectMap : public std::exception
 {
@@ -22,6 +23,8 @@ public:
 	void rotateRight(void);
 
 	void printmap(void);
+
+	Vector2 _loc;
 
 protected:
 	int setPieceMaping(char **);

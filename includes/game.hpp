@@ -11,7 +11,7 @@ public:
 	~gameClass();
 
 private:
-	char **map;
+	char **_map;
 	piece *_activePiece;
 	std::queue<piece *> _nextPiece;
 };

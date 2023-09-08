@@ -29,6 +29,11 @@ public:
 
 	void setX(int v) { _x = v; };
 	void setY(int v) { _y = v; };
+	void setVector(int x, int y)
+	{
+		_x = x;
+		_y = y;
+	};
 
 private:
 	int _x;
