@@ -13,6 +13,31 @@ enum pieceSize
 	threeXthree
 };
 
+class piecePart
+{
+public:
+	piecePart() { _value = 0; };
+	piecePart(char value) { _value = value; };
+	~piecePart(){};
+
+	piecePart operator=(const piecePart &p)
+	{
+		this->_value = p._value;
+		return *this;
+	};
+	piecePart operator=(const char &p)
+	{
+		this->_value = p;
+		return *this;
+	};
+
+	char getValue() const { return _value; };
+
+private:
+	void *img;
+	char _value;
+};
+
 class piece
 {
 public:
@@ -27,13 +52,13 @@ public:
 	Vector2 _loc;
 
 protected:
-	int setPieceMaping(char **);
+	int setPieceMaping(piecePart **);
 
 private:
 	void deletePieceMapping(void);
 
-	char **_pieceMaping;
+	piecePart **_pieceMaping;
 	pieceSize _ownPieceSize;
 };
 
-char **emptyPieceMap(pieceSize);
+piecePart **emptyPieceMap(pieceSize);

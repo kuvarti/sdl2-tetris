@@ -3,7 +3,7 @@
 
 tPiece::tPiece() : piece(pieceSize::threeXthree)
 {
-	char **emptymap = emptyPieceMap(pieceSize::threeXthree);
+	piecePart **emptymap = emptyPieceMap(pieceSize::threeXthree);
 	emptymap[0][1] = '1';
 	emptymap[1][0] = '1';
 	emptymap[1][1] = '1';
@@ -13,7 +13,7 @@ tPiece::tPiece() : piece(pieceSize::threeXthree)
 
 zPiece::zPiece() : piece(pieceSize::threeXthree)
 {
-	char **zPieceMap = emptyPieceMap(pieceSize::threeXthree);
+	piecePart **zPieceMap = emptyPieceMap(pieceSize::threeXthree);
 	zPieceMap[0][0] = '1';
 	zPieceMap[0][1] = '1';
 	zPieceMap[1][1] = '1';
@@ -23,7 +23,7 @@ zPiece::zPiece() : piece(pieceSize::threeXthree)
 
 rzPiece::rzPiece() : piece(pieceSize::threeXthree)
 {
-	char **emptymap = emptyPieceMap(pieceSize::threeXthree);
+	piecePart **emptymap = emptyPieceMap(pieceSize::threeXthree);
 	emptymap[0][1] = '1';
 	emptymap[0][2] = '1';
 	emptymap[1][0] = '1';
@@ -33,7 +33,7 @@ rzPiece::rzPiece() : piece(pieceSize::threeXthree)
 
 lPiece::lPiece() : piece(pieceSize::threeXthree)
 {
-	char **emptymap = emptyPieceMap(pieceSize::threeXthree);
+	piecePart **emptymap = emptyPieceMap(pieceSize::threeXthree);
 	emptymap[0][2] = '1';
 	emptymap[1][0] = '1';
 	emptymap[1][1] = '1';
@@ -43,7 +43,7 @@ lPiece::lPiece() : piece(pieceSize::threeXthree)
 
 rlPiece::rlPiece() : piece(pieceSize::threeXthree)
 {
-	char **emptymap = emptyPieceMap(pieceSize::threeXthree);
+	piecePart **emptymap = emptyPieceMap(pieceSize::threeXthree);
 	emptymap[0][0] = '1';
 	emptymap[1][0] = '1';
 	emptymap[1][1] = '1';
@@ -53,7 +53,7 @@ rlPiece::rlPiece() : piece(pieceSize::threeXthree)
 
 iPiece::iPiece() : piece(pieceSize::fourXfour)
 {
-	char **emptymap = emptyPieceMap(pieceSize::fourXfour);
+	piecePart **emptymap = emptyPieceMap(pieceSize::fourXfour);
 	emptymap[1][0] = '1';
 	emptymap[1][1] = '1';
 	emptymap[1][2] = '1';
@@ -63,7 +63,7 @@ iPiece::iPiece() : piece(pieceSize::fourXfour)
 
 sPiece::sPiece() : piece(pieceSize::fourXfour)
 {
-	char **emptymap = emptyPieceMap(pieceSize::fourXfour);
+	piecePart **emptymap = emptyPieceMap(pieceSize::fourXfour);
 	emptymap[1][1] = '1';
 	emptymap[1][2] = '1';
 	emptymap[2][1] = '1';
