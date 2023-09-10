@@ -8,7 +8,9 @@ class gameClass
 {
 public:
 	gameClass(Vector2);
-	~gameClass();
+	~gameClass(){};
+
+	void getPieceInfo();
 
 private:
 	char **_map;

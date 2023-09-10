@@ -1,4 +1,5 @@
 #include "pieceLib.hpp"
+#include <iostream>
 
 tPiece::tPiece() : piece(pieceSize::threeXthree)
 {
@@ -69,3 +70,28 @@ sPiece::sPiece() : piece(pieceSize::fourXfour)
 	emptymap[2][2] = '1';
 	setPieceMaping(emptymap);
 }
+
+piece *newRandomPiece(void)
+{
+	srand(time(NULL));
+	int decide = rand() % 7;
+	switch (decide)
+	{
+	case 0:
+		return new tPiece();
+	case 1:
+		return new zPiece();
+	case 2:
+		return new rzPiece();
+	case 3:
+		return new lPiece();
+	case 4:
+		return new rlPiece();
+	case 5:
+		return new iPiece();
+	case 6:
+		return new sPiece();
+	default:
+		return nullptr;
+	}
+};

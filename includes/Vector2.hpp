@@ -22,6 +22,7 @@ public:
 	{
 		_x = v.getX();
 		_y = v.getY();
+		return *this;
 	}
 
 	int getX(void) const { return _x; };

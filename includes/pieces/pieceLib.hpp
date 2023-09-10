@@ -49,3 +49,5 @@ public:
 	sPiece(); //* pieceSize::fourXfour
 	~sPiece(){};
 };
+
+piece *newRandomPiece(void);

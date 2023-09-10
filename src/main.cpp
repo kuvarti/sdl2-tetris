@@ -35,6 +35,7 @@ void deneme(piece *tmp)
 
 int main(void)
 {
-	std::cout << "\nhere is rlPiece: " << std::endl;
-	deneme(new rlPiece());
+	gameClass game(Vector2(20, 10));
+
+	game.getPieceInfo();
 }
