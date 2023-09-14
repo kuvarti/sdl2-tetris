@@ -1,3 +1,5 @@
+.directory
+
 # vscode
 .vscode
 
@@ -36,4 +38,4 @@ game
 *.app
 
 # Spesific files
-denem.cpp
+*deneme.cpp

@@ -14,6 +14,8 @@ enum class gameState
 	EXIT
 };
 
+//todo make keyboardeventclass
+
 class gameClass
 {
 public:
@@ -32,6 +34,5 @@ private: // Variables
 	std::queue<piece *> _nextPiece;
 
 	SDL_Window *_window;
-	SDL_Event _event;
 	gameState _gameState;
 };

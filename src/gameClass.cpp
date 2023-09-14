@@ -3,9 +3,12 @@
 
 gameClass::gameClass(Vector2 mapSize)
 {
+	SDL_DisplayMode DM;
+
 	createGameMap(mapSize);
 	SDL_Init(SDL_INIT_EVERYTHING);
-	_window = SDL_CreateWindow("Tetris", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 500, 1000, SDL_WINDOW_OPENGL);
+	SDL_GetCurrentDisplayMode(0, &DM);
+	_window = SDL_CreateWindow("Tetris", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, DM.w / 3, DM.h / 3, SDL_WINDOW_OPENGL);
 	_gameState = gameState::IDLE;
 	gameLoop();
 }
@@ -20,6 +23,7 @@ void gameClass::gameLoop(void)
 
 void gameClass::inputHandler(void)
 {
+	SDL_Event _event;
 	if (SDL_PollEvent(&_event) == true)
 	{
 		switch (_event.type)
@@ -27,6 +31,8 @@ void gameClass::inputHandler(void)
 			case SDL_QUIT:
 				_gameState = gameState::EXIT;
 				break;
+			case SDL_KEYDOWN:
+				std::cout<< "Key : " << _event.key.keysym.sym << std::endl;
 		}
 	}
 }
