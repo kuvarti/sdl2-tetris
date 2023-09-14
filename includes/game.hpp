@@ -1,19 +1,37 @@
 #pragma once
 
 #include <queue>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "pieceLib.hpp"
 #include "Vector2.hpp"
+
+enum class gameState
+{
+	IDLE,
+	PLAYING,
+	PAUSED,
+	EXIT
+};
 
 class gameClass
 {
 public:
 	gameClass(Vector2);
-	~gameClass(){};
+	~gameClass(){}; // TODO: free all allocated area which is _map
 
-	void getPieceInfo();
+	void gameLoop(void);
 
-private:
-	char **_map;
+private: // Functions
+	void createGameMap(Vector2);
+	void inputHandler(void);
+
+private: // Variables
 	piece *_activePiece;
+	piecePart **_map;
 	std::queue<piece *> _nextPiece;
+
+	SDL_Window *_window;
+	SDL_Event _event;
+	gameState _gameState;
 };

@@ -34,3 +34,6 @@ game
 *.exe
 *.out
 *.app
+
+# Spesific files
+denem.cpp

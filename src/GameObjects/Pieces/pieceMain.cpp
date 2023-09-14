@@ -43,24 +43,24 @@ void piece::rotateRight(void)
 
 int piece::setPieceMaping(piecePart **newmap)
 {
-	// if (_ownPieceSize == pieceSize::threeXthree && newmap[2] && !newmap[3])
-	// {
-	// 	for (int i = 0; i < 2; i++)
-	// 	{
-	// 		if (!newmap[i][2] || newmap[i][3])
-	// 			throw inCorrectMap();
-	// 	}
-	// }
-	// else if (_ownPieceSize == pieceSize::fourXfour && newmap[3] && !newmap[4])
-	// {
-	// 	for (int i = 0; i < 3; i++)
-	// 	{
-	// 		if (!newmap[i][3] || newmap[i][4])
-	// 			throw inCorrectMap();
-	// 	}
-	// }
-	// else
-	// 	throw inCorrectMap();
+	if (_ownPieceSize == pieceSize::threeXthree && newmap[2] && !newmap[3])
+	{
+		for (int i = 0; i < 2; i++)
+		{
+			if (!newmap[i][2].getValue() || newmap[i][3].getValue())
+				throw inCorrectMap();
+		}
+	}
+	else if (_ownPieceSize == pieceSize::fourXfour && newmap[3] && !newmap[4])
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			if (!newmap[i][3].getValue() || newmap[i][4].getValue())
+				throw inCorrectMap();
+		}
+	}
+	else
+		throw inCorrectMap();
 	deletePieceMapping();
 	_pieceMaping = newmap;
 	return 0;
