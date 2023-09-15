@@ -24,7 +24,7 @@ void gameClass::gameLoop(void)
 void gameClass::inputHandler(void)
 {
 	SDL_Event _event;
-	if (SDL_PollEvent(&_event) == true)
+	while (SDL_PollEvent(&_event) == true)
 	{
 		switch (_event.type)
 		{
@@ -32,7 +32,7 @@ void gameClass::inputHandler(void)
 				_gameState = gameState::EXIT;
 				break;
 			case SDL_KEYDOWN:
-				std::cout<< "Key : " << _event.key.keysym.sym << std::endl;
+				keyboardEvent::handleKeyDown(*this, _event);
 		}
 	}
 }

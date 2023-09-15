@@ -38,9 +38,13 @@ int main()
 	{
 		printf( "Unable to load image %s! SDL Error: %s\n", "02_getting_an_image_on_the_screen/hello_world.bmp", SDL_GetError() );
 	}
-	SDL_BlitSurface( gHelloWorld, NULL, gScreenSurface, NULL );
-	SDL_UpdateWindowSurface( gWindow );
-	SDL_Event e; bool quit = false; while( quit == false ){ while( SDL_PollEvent( &e ) ){ if( e.type == SDL_QUIT ) quit = true; } }
+	SDL_Event e;
+	bool quit = false;
+	while( quit == false ){
+		SDL_BlitSurface( gHelloWorld, NULL, gScreenSurface, NULL );
+		SDL_UpdateWindowSurface( gWindow );
+		while( SDL_PollEvent( &e ) ){ if( e.type == SDL_QUIT ) quit = true; }
+	}
 
 	SDL_FreeSurface( gHelloWorld );
 	gHelloWorld = NULL;

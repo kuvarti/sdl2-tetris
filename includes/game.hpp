@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "pieceLib.hpp"
+#include "keyboardEvents.hpp"
 #include "Vector2.hpp"
 
 enum class gameState
